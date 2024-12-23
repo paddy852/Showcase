@@ -2,3 +2,9 @@
 @use "sass/header";
 @use "sass/grid";
 @use "sass/layout";
+
+// showcase files
+
+@use "sass/showcase/glitch";
+@use "sass/showcase/_text-animation";
+@use "sass/showcase/typing_effect";
