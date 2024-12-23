@@ -1,0 +1,34 @@
+@use "variables";
+
+.grid-container-fluid,
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(variables.$grid-columns, 1fr);
+  gap: variables.$gap;
+  padding: 5px 10px;
+}
+
+.grid-container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.grid-example [class*="span-"] {
+  background-color: variables.$grid-item-color;
+  color: variables.$secondary-text-color;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@for $span from 1 through variables.$grid-columns {
+  .span-#{$span} {
+    grid-column-end: span $span;
+  }
+}
+
+@for $offset from 0 through variables.$grid-columns {
+  .offset-#{$offset} {
+    grid-column-start: $offset + 1;
+  }
+}
